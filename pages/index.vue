@@ -23,11 +23,14 @@
         />
       </div>
       
-      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-        <h1 class="font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          ✨ Le Divan des Sultanes ✨
+      <!-- Overlay pour améliorer le contraste -->
+      <div class="absolute inset-0 z-5 bg-black/20"></div>
+      
+      <div class="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 text-center text-white">
+        <h1 class="font-playfair text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+          ✨ Le Divan des Sultanes 
         </h1>
-        <p class="text-xl md:text-2xl mb-8 font-light opacity-95">
+        <p class="text-lg sm:text-xl md:text-2xl mb-8 font-light opacity-95 drop-shadow-md max-w-3xl mx-auto">
           Incarner un leadership puissant, entre excellence et bienveillance
         </p>
         
@@ -35,22 +38,22 @@
           <NuxtImg
             src="/img/anna-alcaide-portrait.png"
             alt="Anna Alcaide Villanueva"
-            class="w-64 h-64 mx-auto rounded-2xl shadow-2xl object-cover"
+            class="w-48 h-48 sm:w-64 sm:h-64 mx-auto rounded-2xl shadow-2xl object-cover ring-4 ring-white/20"
             loading="eager"
           />
         </div>
         
-        <div class="space-y-4">
+        <div class="flex flex-col items-center space-y-6">
           <Button 
             as="a" 
             href="#waitlist" 
             size="lg"
-            class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border-0 rounded-xl"
           >
             Rejoindre la liste d'attente
           </Button>
           
-          <p class="text-lg font-semibold mt-6">
+          <p class="text-base sm:text-lg font-semibold bg-white/10 backdrop-blur-sm rounded-lg py-3 px-6 inline-block">
             Démarrage en Octobre 2025 – Places limitées !
           </p>
         </div>
@@ -69,12 +72,12 @@
           </p>
         </div>
         
-        <Card class="max-w-4xl mx-auto bg-slate-50 border-l-4 border-red-600 p-8">
-          <blockquote class="text-2xl font-light italic text-slate-700 mb-4">
-            « Embrassez ce qui vous rend unique, même si cela rend les autres mal à l'aise »
-          </blockquote>
-          <cite class="text-lg font-semibold text-slate-800">— Aretha Franklin</cite>
-        </Card>
+        <div class="max-w-4xl mx-auto bg-gradient-to-r from-amber-50 to-amber-100 border-l-4 border-amber-500 p-8 shadow-lg rounded-xl flex items-center justify-between">
+         <blockquote class="text-2xl font-light italic text-slate-700 leading-relaxed flex-1">
+          « Embrassez ce qui vous rend unique, même si cela rend les autres mal à l'aise »
+         </blockquote>
+         <cite class="text-lg font-semibold text-slate-800 ml-8 whitespace-nowrap">— Aretha Franklin</cite>
+        </div>
       </div>
     </section>
 
@@ -82,7 +85,7 @@
     <section class="py-20 bg-slate-50">
       <div class="max-w-6xl mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-8">
-          <Card class="p-8 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="p-8 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
             <h3 class="font-playfair text-2xl font-bold text-slate-800 mb-6">
               Ce programme est pour vous si
             </h3>
@@ -92,19 +95,19 @@
                 <span class="text-slate-700 leading-relaxed">{{ item }}</span>
               </li>
             </ul>
-          </Card>
+          </div>
           
-          <Card class="p-8 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="p-8 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
             <h3 class="font-playfair text-2xl font-bold text-slate-800 mb-6">
               Ce programme n'est pas pour vous si
             </h3>
             <ul class="space-y-4">
               <li v-for="item in notForYouItems" :key="item" class="flex items-start space-x-3">
-                <span class="text-red-500 text-xl mt-1">❌</span>
+                <span class="text-amber-500 text-xl mt-1">❌</span>
                 <span class="text-slate-700 leading-relaxed">{{ item }}</span>
               </li>
             </ul>
-          </Card>
+          </div>
         </div>
       </div>
     </section>
@@ -130,7 +133,7 @@
           <p class="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8">
             Que ce soit pour accompagner une collaboratrice en questionnement, ou pour capitaliser sur les compétences et la posture d'une manageuse à fort impact, ce programme offre un espace confidentiel et exigeant où se réinterrogent rapport au pouvoir, à l'autorité et au leadership authentique.
           </p>
-          <p class="text-2xl font-semibold text-red-600">
+          <p class="text-2xl font-semibold text-amber-600">
             Proposer ce parcours, c'est reconnaître et investir dans le leadership féminin de votre organisation.
           </p>
         </div>
@@ -154,7 +157,7 @@
           </h2>
         </div>
         
-        <Card class="bg-white p-8 shadow-lg">
+        <div class="bg-white p-8 shadow-lg">
           <ul class="space-y-6">
             <li v-for="item in experienceItems" :key="item.title" class="flex items-start space-x-4">
               <span class="text-2xl mt-1">✨</span>
@@ -164,14 +167,14 @@
               </div>
             </li>
           </ul>
-        </Card>
+        </div>
         
         <div class="text-center mt-12">
           <Button 
             as="a" 
             href="#waitlist"
             size="lg"
-            class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold"
+            class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 rounded-xl"
           >
             Je m'inscris sur la liste d'attente
           </Button>
@@ -195,7 +198,7 @@
         </div>
         
         <div class="grid md:grid-cols-3 gap-8 mb-16">
-          <Card v-for="benefit in benefits" :key="benefit.title" class="p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div v-for="benefit in benefits" :key="benefit.title" class="p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
             <h3 class="font-playfair text-xl font-bold text-slate-800 mb-4">
               {{ benefit.title }}
             </h3>
@@ -204,15 +207,15 @@
                 • {{ item }}
               </li>
             </ul>
-          </Card>
+          </div>
         </div>
         
-        <Card class="max-w-4xl mx-auto bg-slate-50 border-l-4 border-red-600 p-8">
-          <blockquote class="text-2xl font-light italic text-slate-700 mb-4">
+        <div class="max-w-4xl mx-auto bg-gradient-to-r from-amber-50 to-amber-100 border-l-4 border-amber-500 p-8 shadow-lg">
+          <blockquote class="text-2xl font-light italic text-slate-700 mb-4 leading-relaxed">
             « Je suis persuadée que les rêves d'aujourd'hui seront les réalités de demain. »
           </blockquote>
-          <cite class="text-lg font-semibold text-slate-800">— Malala Yousafzai</cite>
-        </Card>
+          <cite class="text-lg font-semibold text-slate-800 block text-right">— Malala Yousafzai</cite>
+        </div>
       </div>
     </section>
 
@@ -236,7 +239,7 @@
           </p>
         </div>
         
-        <Card class="bg-white p-8 shadow-lg">
+        <div class="bg-white p-8 shadow-lg">
           <h3 class="font-playfair text-2xl font-bold text-slate-800 mb-6">Au programme :</h3>
           <ul class="space-y-6">
             <li v-for="item in programItems" :key="item.title" class="flex items-start space-x-4">
@@ -247,14 +250,14 @@
               </div>
             </li>
           </ul>
-        </Card>
+        </div>
         
         <div class="text-center mt-12">
           <Button 
             as="a" 
             href="#waitlist"
             size="lg"
-            class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold"
+            class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 rounded-xl"
           >
             Je m'inscris sur la liste d'attente
           </Button>
@@ -269,7 +272,7 @@
           <h2 class="font-playfair text-4xl md:text-5xl font-bold text-slate-800 mb-4">
             À propos de votre Coach certifiée
           </h2>
-          <h3 class="text-3xl font-semibold text-red-600 mb-8">
+          <h3 class="text-3xl font-semibold text-amber-600 mb-8">
             Anna Alcaide Villanueva
           </h3>
         </div>
@@ -295,7 +298,7 @@
             <p class="text-lg text-slate-700 leading-relaxed">
               Mon chemin m'a menée vers <strong>la formation, le développement du leadership, puis le coaching</strong>. Un chemin d'accompagnement qui s'ancre dans l'expérience, le corps, les émotions, les systèmes vivants.
             </p>
-            <p class="text-lg text-red-600 font-semibold">
+            <p class="text-lg text-amber-600 font-semibold">
               En 2023, j'ai choisi de vivre au Maroc, dans un village berbère face à l'océan, pour me rapprocher de l'essentiel. C'est là qu'est né <strong>le Divan des Sultanes</strong>.
             </p>
           </div>
@@ -319,13 +322,13 @@
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          <Card v-for="testimonial in testimonials" :key="testimonial.name" class="p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-red-600">
+          <div v-for="testimonial in testimonials" :key="testimonial.name" class="p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-amber-500">
             <div class="flex items-center justify-between mb-6">
               <div class="flex items-center space-x-4">
                 <NuxtImg
                   :src="testimonial.photo"
                   :alt="testimonial.name"
-                  class="w-16 h-16 rounded-full object-cover border-2 border-red-600"
+                  class="w-16 h-16 rounded-full object-cover border-2 border-amber-500"
                 />
                 <div>
                   <h4 class="font-semibold text-slate-800">{{ testimonial.name }}</h4>
@@ -339,7 +342,7 @@
             <blockquote class="text-slate-700 italic leading-relaxed">
               "{{ testimonial.quote }}"
             </blockquote>
-          </Card>
+          </div>
         </div>
       </div>
     </section>
@@ -356,7 +359,7 @@
           </p>
         </div>
         
-        <Card class="bg-white/10 backdrop-blur-lg border border-white/20 p-8 max-w-2xl mx-auto">
+        <div class="bg-white/10 backdrop-blur-lg border border-white/20 p-8 max-w-2xl mx-auto">
           <iframe 
             data-tally-src="https://tally.so/embed/3q8k8O?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1" 
             loading="lazy" 
@@ -372,7 +375,7 @@
           <p class="text-center mt-6 text-sm opacity-80">
             <strong>Démarrage en Octobre 2025 – Places limitées !</strong>
           </p>
-        </Card>
+        </div>
       </div>
     </section>
 
@@ -499,51 +502,9 @@ const testimonials = [
   }
 ]
 
-// Preload fonts for performance
-useHead({
-  link: [
-    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }
-  ]
-})
-
-// Load Tally script on client side
-onMounted(() => {
-  if (process.client) {
-    const d = document
-    const w = "https://tally.so/widgets/embed.js"
-    const v = function() {
-      if (typeof (window as any).Tally !== "undefined") {
-        (window as any).Tally.loadEmbeds()
-      } else {
-        d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((e: any) => {
-          e.src = e.dataset.tallySrc
-        })
-      }
-    }
-    if (typeof (window as any).Tally !== "undefined") {
-      v()
-    } else if (d.querySelector(`script[src="${w}"]`) == null) {
-      const s = d.createElement("script")
-      s.src = w
-      s.onload = v
-      s.onerror = v
-      d.body.appendChild(s)
-    }
-  }
+// SEO and prerendering
+definePageMeta({
+  prerender: true
 })
 </script>
 
-<style>
-html {
-  font-family: 'Inter', sans-serif;
-}
-
-.font-playfair {
-  font-family: 'Playfair Display', serif;
-}
-
-.font-inter {
-  font-family: 'Inter', sans-serif;
-}
-</style>

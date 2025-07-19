@@ -76,3 +76,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
